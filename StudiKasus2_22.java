@@ -38,9 +38,9 @@ public class StudiKasus2_22{
                     int kurang = 4 - jumlahDoc;
                     System.out.println("Status : Dokumen tidak lengkap (kurang " +kurang + " dokumen). Dana Penghargaan tidak diberikan.");
                 } 
-            } else {
-                System.out.println("Status : Kegiatan ini tidak memperoleh dana penghargaan");
             }
+        } else {
+            System.out.println("Status : Kegiatan ini tidak memperoleh dana penghargaan");
         }
 
         sc.close();
