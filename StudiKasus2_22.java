@@ -8,7 +8,7 @@ public class StudiKasus2_22{
 
         System.out.print("Nama Mahasiswa\t: ");
         nama = sc.nextLine();
-        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/Mandiri/PKM/Lainnya): ");
+        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA): ");
         jenis = sc.nextLine().trim().toUpperCase();
         System.out.print("Jumlah dokumen\t: ");
         jumlahDoc = sc.nextInt();
@@ -27,6 +27,22 @@ public class StudiKasus2_22{
             }else {
                 System.out.println("Status : Dana penghargaan tidak diberikan (hanya untuk Juara 1, 2, atau 3).");
             }
+        } else if (jenis.equalsIgnoreCase("PKM")) {
+            System.out.print ("Status pendanaan PKM (1 = lolos, 0 = tidak lolos) : ");
+            int statusPendanaan = sc.nextInt();
+
+            if (statusPendanaan==1) {
+                if(jumlahDoc == 4) {
+                    System.out.println("Status : Dokumen lengkap. Selamat! Memperoleh dana penghargaan.");
+                } else {
+                    int kurang = 4 - jumlahDoc;
+                    System.out.println("Status : Dokumen tidak lengkap (kurang " +kurang + " dokumen). Dana Penghargaan tidak diberikan.");
+                } 
+            } else {
+                System.out.println("Status : Kegiatan ini tidak memperoleh dana penghargaan");
+            }
         }
+
+        sc.close();
     }
 }
